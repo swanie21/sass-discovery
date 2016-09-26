@@ -19,6 +19,7 @@ $font-sans: 'Lato', sans-serif;
   color: $color;
   font-size: 16px;
   font-family: $font-sans;
+  line-height: 1.5em;
 }
 
 // pass color into mixin
@@ -51,7 +52,6 @@ a {
     color: #23568b;
   }
 }
-
 
 // span elements
 .feature {

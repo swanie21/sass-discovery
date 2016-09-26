@@ -36,7 +36,16 @@
       }
     </p>
     <p>
-      <span class='feature'>Mixin Arguments: </span>
+      <span class='feature'>Mixin Arguments: </span>mixins can take arguments that we pass to the mixin when we call it; user can pass multiple arguments by separating the values with commas in the mixin definition; mixin arguments can be defined as a default but the user can still pass in overrides (@mixin center-container($color, $background: #eee)); mixins are useful for grouping vendor-prefixed rules (-webkit-border-radius, -webkit-box-shadow)
+    </p>
+    <p class='example'>
+      @mixin paragraph-formatting($color) { <br>
+        <span class='indent'>color: $color; </span><br>
+        <span class='indent'>font-size: 16px; </span><br>
+      } <br><br>
+      p { <br>
+        <span class='indent'>@include paragraph-formatting(#7e2abf); </span><br>
+      }
     </p>
     <p>
       <span class='feature'>Nesting: </span>the user can nest CSS rules inside each other instead of repeating selectors in separate declarations; reflects the markup structure
@@ -71,6 +80,27 @@
         <span class='indent'>&amp;:hover { </span><br>
         <span class='indent-twice'>color: #FF0000; </span><br>
         <span class='indent'>} </span><br>
+      }
+    </p>
+    <p>
+      <span class='feature'>@import: </span>@import rule allows the importing of multiple .scss files to be merged into a single .css file when compiled; benefits: a single CSS means fewer HTTP connections, variables can be defined in their own file and be imported whenever they are needed, and mixins can be shared and reused through imported .scss files
+    </p>
+    <p class='example'>
+      @import 'reset'; <br>
+      @import 'variables'; <br>
+      @import 'mixins';
+    </p>
+    <p>
+      <span class='feature'>@extend: </span>@extend function allows the user to 'chain together' styles that are shared amongst multiple selectors; used when a class has the same styles as another class, except for one or a few other differences
+    <p>
+    <p class='example'>
+      .alert { <br>
+        <span class='indent'>padding: 15px; </span><br>
+        <span class='indent'>text-align: center; </span><br>
+      } <br><br>
+      .alert-positive { <br>
+        <span class='indent'>@extend .alert; </span><br>
+        <span class='indent'>background: #9c3; </span><br>
       }
     </p>
     <p>
