@@ -1,30 +1,15 @@
-$font-sans: 'Lato', sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import 'variables.scss';
+@import 'mixins.scss';
 
 // mixin
-@mixin example-container {
-  border: 1px solid #16497E;
-  color: #176281;
-  display: inline-block;
-  margin: 0;
-  margin-left: 20px;
-  padding: 10px;
-}
-
 .example {
   @include example-container;
 }
 
-// mixin with argument
-@mixin paragraph-formatting($color) {
-  color: $color;
-  font-size: 16px;
-  font-family: $font-sans;
-  line-height: 1.5em;
-}
-
 // pass color into mixin
 p {
-  @include paragraph-formatting(#7e2abf);
+  @include paragraph-formatting($medium-purple-color);
 }
 
 // nested css rules
@@ -55,7 +40,7 @@ a {
 
 // span elements
 .feature {
-  color: lighten(purple, 5%);
+  color: lighten($medium-purple-color, 5%);
   font: {
     size: 18px;
     weight: bold;
@@ -65,6 +50,14 @@ a {
 .book-title {
   color: darken(#1AB78A, 10%);
   text-decoration: underline;
+}
+
+.terminal-commands {
+  color: #1AB78A;
+}
+
+.output-styles {
+  font-weight: bold;
 }
 
 .link {
@@ -83,6 +76,14 @@ a {
 // body formatting
 body{
   padding-left: 25px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  margin-top: 50px;
 }
 
 h4 {

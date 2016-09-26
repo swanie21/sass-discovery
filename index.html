@@ -3,17 +3,40 @@
   <head>
     <meta charset="utf-8">
     <title>SASS</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <h1>SASS (Syntactically Awesome Style Sheets)</h1>
     <h3>Steps to learn SASS:</h3>
-    <ul>
-      <li>Read <span class='book-title'>SASS for Web Designers</span> by Dan Cederholm</li>
-      <li>Make practice files</li>
-      <li>Observe how SASS pre-processes .scss files into .css files</li>
-    </ul>
+      <ul>
+        <li>Read <span class='book-title'>SASS for Web Designers</span> by Dan Cederholm</li>
+        <li>Make practice files</li>
+        <li>Observe how SASS pre-processes .scss files into .css files</li>
+      </ul>
+    <h3>Set-up SASS locally with Command Line</h3>
+    <p>
+      Mac OS X comes pre-installed with Ruby and because SASS is packaged as a Ruby 'gem,' installation is quite simple. In the command line type: <span class='terminal-commands
+      '>gem install sass</span>
+    </p>
+    <p>
+      After SASS is installed we want it to 'watch' files, so whenever we're editing a stylesheet we want SASS to monitor that file and convert the .scss file into a .css file. In the command line type: <span class='terminal-commands'>sass --watch main.scss:main.css</span>. The 'main.scss' is the name of your .scss file that will be converted into the 'main.css' file.
+    </p>
+    <p>
+      SASS files can be organized into directories and the 'watch' command can be used to watch this specific directory. For example, let's say the .scss files are in a 'styles' folder. To watch the changes made in this directory in the command line type: <span class='terminal-commands'>sass --watch styles/main.scss:styles/main.css</span>
+    </p>
+    <p>
+      SASS files can have different output styles: style expanded, style compact, and style compressed. To specify the output style you can declare it in the command line with the 'watch' command: <span class='terminal-commands'>sass --watch --style expanded main.scss:main.css</span>
+    </p>
+    <p class='example'>
+      <span class='output-styles'>Style expanded: line break between declarations </span><br>
+      li { <br>
+        <span class='indent'>margin-left: 10px; </span><br>
+      } <br><br>
+      <span class='output-styles'>Style compact: each declaration is on one line </span><br>
+      li { margin-left: 10px; } <br><br>
+      <span class='output-styles'>Style compressed: removes all spaces and line breaks </span><br>
+      li{margin-left:10px;}
+    </p>
     <h3>SASS Features:</h3>
     <p>
       <span class='feature'>Variables: </span>allows the user to define and reuse values throughout the stylesheet; needs a $ to specify a value as a variable
@@ -86,12 +109,12 @@
       <span class='feature'>@import: </span>@import rule allows the importing of multiple .scss files to be merged into a single .css file when compiled; benefits: a single CSS means fewer HTTP connections, variables can be defined in their own file and be imported whenever they are needed, and mixins can be shared and reused through imported .scss files
     </p>
     <p class='example'>
-      @import 'reset'; <br>
-      @import 'variables'; <br>
-      @import 'mixins';
+      @import 'reset.scss'; <br>
+      @import 'variables.scss'; <br>
+      @import 'mixins.scss';
     </p>
     <p>
-      <span class='feature'>@extend: </span>@extend function allows the user to 'chain together' styles that are shared amongst multiple selectors; used when a class has the same styles as another class, except for one or a few other differences
+      <span class='feature'>@extend: </span>@extend function allows the user to 'chain together' styles that are shared amongst multiple selectors; used when a class has the same styles as another class, except for one or a few other differences; will create multiple, comma-separated selectors for shared styles
     <p>
     <p class='example'>
       .alert { <br>
@@ -104,7 +127,44 @@
       }
     </p>
     <p>
+      <span class='feature'>Placeholder Selector with @extend: </span>allows the user to define 'phantom' classes that will not appear in the outputted .css file on their own, but are solely for the purpose of extending other styles; the class name is prefixed with a % instead of a period
+    </p>
+    <p class='example'>
+      %button { <br>
+        <span class='indent'>padding: 10px; </span><br>
+        <span class='indent'>font-weight: bold; </span><br>
+        <span class='indent'>background: blue; </span><br>
+      } <br><br>
+      .submit { <br>
+        <span class='indent'>@extend %button; </span><br>
+      }
+    </p>
+    <p>
       <span class='feature'>Comments: </span>Multi-line comments(/* with forward slashes and asterisks */) are compiled into the final .css output file; Single line comments (// with two forward slashes) are not compiled into the final .css output file
+    </p>
+    <h3>SCSS Formatting</h3>
+      <ul>
+        <li>List @extend(s) first</li>
+        <li>List @include(s) next</li>
+        <li>List 'regular' styles next</li>
+        <li>List nested pseudo classes next</li>
+        <li>List nested selectors last</li>
+        <li>Never write vendor prefixes</li>
+        <li>Maximum nesting is 3 levels deep and 50 lines</li>
+        <li>Underscores in .scss files indicates the file isn't meant to be compiled by itself </li>
+      </ul>
+    <p class='example'>
+      .submit-button { <br>
+        <span class='indent'>@extend %button; </span><br>
+        <span class='indent'>@include rounded-corners(5px); </span><br>
+        <span class='indent'>background: Blue; </span><br>
+        <span class='indent'>&amp;:hover { </span><br>
+        <span class='indent-twice'>background: DarkCyan; </span><br>
+        <span class='indent'>} </span><br>
+        <span class='indent'>h3 { </span><br>
+        <span class='indent-twice'>border-bottom: 1px solid #FFF; </span><br>
+        <span class='indent'>} </span><br>
+      }
     </p>
     <h4><a href="http://sass-lang.com/" target="_blank">More info at <span class='link'>SASS</span> Website</a></h4>
   </body>

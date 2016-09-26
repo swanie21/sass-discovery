@@ -1,0 +1,16 @@
+@mixin example-container {
+  border: 1px solid #16497E;
+  color: #176281;
+  display: inline-block;
+  margin: 0;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+// mixin with argument
+@mixin paragraph-formatting($color) {
+  color: $color;
+  font-size: 16px;
+  font-family: $font-sans;
+  line-height: 1.5em;
+}
