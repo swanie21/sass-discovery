@@ -1,0 +1,95 @@
+$font-sans: 'Lato', sans-serif;
+
+// mixin
+@mixin example-container {
+  border: 1px solid #16497E;
+  color: #176281;
+  display: inline-block;
+  margin: 0;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.example {
+  @include example-container;
+}
+
+// mixin with argument
+@mixin paragraph-formatting($color) {
+  color: $color;
+  font-size: 16px;
+  font-family: $font-sans;
+}
+
+// pass color into mixin
+p {
+  @include paragraph-formatting(#7e2abf);
+}
+
+// nested css rules
+ul {
+  margin-left: 5px;
+
+  li {
+    color: #1AB78A;
+    font: {
+      size: 18px;
+      family: $font-sans;
+      weight: bold;
+    }
+  }
+}
+
+// nested namespace property (e.g. font, text, background)
+a {
+  color: #000;
+  text: {
+    decoration: none;
+    transform: capitalize;
+  }
+  &:hover {
+    color: #23568b;
+  }
+}
+
+
+// span elements
+.feature {
+  color: lighten(purple, 5%);
+  font: {
+    size: 18px;
+    weight: bold;
+  }
+}
+
+.book-title {
+  color: darken(#1AB78A, 10%);
+  text-decoration: underline;
+}
+
+.link {
+  color: #23568b;
+  text-transform: uppercase;
+}
+
+.indent {
+  padding-left: 15px;
+}
+
+.indent-twice {
+  padding-left: 30px;
+}
+
+// body formatting
+body{
+  padding-left: 25px;
+}
+
+h4 {
+  margin-top: 50px;
+}
+
+// single line comments aren't compiled into the final .css output
+
+/* multi-line comments
+are compiled into the final .css output */

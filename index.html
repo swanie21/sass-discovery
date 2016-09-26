@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SASS Practice</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>SASS Practice</h1>
+    <h3>Steps to learn SASS:</h3>
+    <ul>
+      <li>Read <span class='book-title'>SASS for Web Designers</span> by Dan Cederholm</li>
+      <li>Make practice files</li>
+      <li>Observe how SASS pre-processes .scss files into .css files</li>
+    </ul>
+    <h3>SASS Features:</h3>
+    <p>
+      <span class='feature'>Variables: </span>allows the user to define and reuse values throughout the stylesheet; needs a $ to specify a value as a variable
+    </p>
+    <p class='example'>
+      $font-sans: 'Lato', sans-serif;
+    </p>
+    <p>
+      <span class='feature'>Mixins: </span>allows the user to define and reuse blocks of styles
+    </p>
+    <p class='example'>
+      @mixin example-container { <br>
+        <span class='indent'>border: 1px solid #16497E; </span><br>
+        <span class='indent'>display: inline-block; </span><br>
+        <span class='indent'>margin: 0; </span><br>
+        <span class='indent'>padding: 10px; </span><br>
+      } <br><br>
+      .example { <br>
+        <span class='indent'>@include example-container; </span><br>
+      }
+    </p>
+    <p>
+      <span class='feature'>Nesting: </span>the user can nest CSS rules inside each other instead of repeating selectors in separate declarations; reflects the markup structure
+    </p>
+    <p class='example'>
+      ul { <br>
+        <span class='indent'>margin-left: 5px; </span><br><br>
+
+        <span class='indent'>li { </span><br>
+        <span class='indent-twice'>color: #1AB78A; <br>
+        <span class='indent'>} <br>
+      }
+    </p>
+    <p>
+      <span class='feature'>Nesting Namespaced Properties: </span>the user can nest properties that share a namespace; for example: font-family, font-size, and font-weight can be nested under font
+    </p>
+    <p class='example'>
+      h2 { <br>
+        <span class='indent'>font: { </span><br>
+        <span class='indent-twice'>size: 18px; </span><br>
+        <span class='indent-twice'>family: $font-sans; </span><br>
+        <span class='indent-twice'>weight: bold; </span><br>
+        <span class='indent'>} </span><br>
+      }
+    </p>
+    <p>
+      <span class='feature'>Reference Parent Selector: </span>the user can use an ampersand &amp; as a special placeholder to reference the parent selector when specifying pseudo-classes like hover, focus, etc.
+    </p>
+    <p class='example'>
+      a { <br>
+        <span class='indent'>color: #000; </span><br>
+        <span class='indent'>&amp;:hover { </span><br>
+        <span class='indent-twice'>color: #FF0000; </span><br>
+        <span class='indent'>} </span><br>
+      }
+    </p>
+    <p>
+      <span class='feature'>Comments: </span>Multi-line comments(/* with forward slashes and asterisks */) are compiled into the final .css output file; Single line comments (// with two forward slashes) are not compiled into the final .css output file
+    </p>
+    <h4><a href="http://sass-lang.com/" target="_blank">More info at <span class='link'>SASS</span> Website</a></h4>
+  </body>
+</html>
