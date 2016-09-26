@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>SASS</title>
@@ -15,11 +15,10 @@
       </ul>
     <h3>Set-up SASS locally with Command Line</h3>
     <p>
-      Mac OS X comes pre-installed with Ruby and because SASS is packaged as a Ruby 'gem,' installation is quite simple. In the command line type: <span class='terminal-commands
-      '>gem install sass</span>
+      Mac OS X comes pre-installed with Ruby and because SASS is packaged as a Ruby 'gem,' installation is quite simple. In the command line type: <span class='terminal-commands'>gem install sass</span>. After installation you can check the version of your SASS by typing in: <span class='terminal-commands'> sass -v </span>
     </p>
     <p>
-      After SASS is installed we want it to 'watch' files, so whenever we're editing a stylesheet we want SASS to monitor that file and convert the .scss file into a .css file. In the command line type: <span class='terminal-commands'>sass --watch main.scss:main.css</span>. The 'main.scss' is the name of your .scss file that will be converted into the 'main.css' file.
+      After SASS is installed we want it to 'watch' files, so whenever we're editing a stylesheet we want SASS to monitor that file and convert the .scss file into a .css file. In the command line type: <span class='terminal-commands'>sass --watch main.scss:main.css</span>. The 'main.scss' is the name of your .scss file that will be converted into the 'main.css' file. These file names can be whatever you prefer them to be named. Typically, the 3 basic file types are module, partial, and vendor files.
     </p>
     <p>
       SASS files can be organized into directories and the 'watch' command can be used to watch this specific directory. For example, let's say the .scss files are in a 'styles' folder. To watch the changes made in this directory in the command line type: <span class='terminal-commands'>sass --watch styles/main.scss:styles/main.css</span>
@@ -28,13 +27,13 @@
       SASS files can have different output styles: style expanded, style compact, and style compressed. To specify the output style you can declare it in the command line with the 'watch' command: <span class='terminal-commands'>sass --watch --style expanded main.scss:main.css</span>
     </p>
     <p class='example'>
-      <span class='output-styles'>Style expanded: line break between declarations </span><br>
+      <span class='bold-text'>Style expanded: line break between declarations</span><br>
       li { <br>
-        <span class='indent'>margin-left: 10px; </span><br>
+        <span class='indent'>margin-left: 10px;</span><br>
       } <br><br>
-      <span class='output-styles'>Style compact: each declaration is on one line </span><br>
+      <span class='bold-text'>Style compact: each declaration is on one line</span><br>
       li { margin-left: 10px; } <br><br>
-      <span class='output-styles'>Style compressed: removes all spaces and line breaks </span><br>
+      <span class='bold-text'>Style compressed: removes all spaces and line breaks</span><br>
       li{margin-left:10px;}
     </p>
     <h3>SASS Features:</h3>
@@ -49,13 +48,13 @@
     </p>
     <p class='example'>
       @mixin example-container { <br>
-        <span class='indent'>border: 1px solid #16497E; </span><br>
-        <span class='indent'>display: inline-block; </span><br>
-        <span class='indent'>margin: 0; </span><br>
-        <span class='indent'>padding: 10px; </span><br>
+        <span class='indent'>border: 1px solid #16497E;</span><br>
+        <span class='indent'>display: inline-block;</span><br>
+        <span class='indent'>margin: 0;</span><br>
+        <span class='indent'>padding: 10px;</span><br>
       } <br><br>
       .example { <br>
-        <span class='indent'>@include example-container; </span><br>
+        <span class='indent'>@include example-container;</span><br>
       }
     </p>
     <p>
@@ -63,11 +62,11 @@
     </p>
     <p class='example'>
       @mixin paragraph-formatting($color) { <br>
-        <span class='indent'>color: $color; </span><br>
-        <span class='indent'>font-size: 16px; </span><br>
+        <span class='indent'>color: $color;</span><br>
+        <span class='indent'>font-size: 16px;</span><br>
       } <br><br>
       p { <br>
-        <span class='indent'>@include paragraph-formatting(#7e2abf); </span><br>
+        <span class='indent'>@include paragraph-formatting(#7e2abf);</span><br>
       }
     </p>
     <p>
@@ -75,11 +74,11 @@
     </p>
     <p class='example'>
       ul { <br>
-        <span class='indent'>margin-left: 5px; </span><br><br>
+        <span class='indent'>margin-left: 5px;</span><br><br>
 
-        <span class='indent'>li { </span><br>
-        <span class='indent-twice'>color: #1AB78A; <br>
-        <span class='indent'>} <br>
+        <span class='indent'>li {</span><br>
+        <span class='indent-twice'>color: #1AB78A;</span><br>
+        <span class='indent'>}</span><br>
       }
     </p>
     <p>
@@ -87,11 +86,31 @@
     </p>
     <p class='example'>
       h2 { <br>
-        <span class='indent'>font: { </span><br>
-        <span class='indent-twice'>size: 18px; </span><br>
-        <span class='indent-twice'>family: $font-sans; </span><br>
-        <span class='indent-twice'>weight: bold; </span><br>
-        <span class='indent'>} </span><br>
+        <span class='indent'>font: {</span><br>
+        <span class='indent-twice'>size: 18px;</span><br>
+        <span class='indent-twice'>family: $font-sans;</span><br>
+        <span class='indent-twice'>weight: bold;</span><br>
+        <span class='indent'>}</span><br>
+      }
+    </p>
+    <p>
+      <span class='feature'>Nesting Media Queries: </span>allows the user to nest media queries inside the original declaration of a selector and it will 'bubble up' into its own separate declaration when the stylesheet is compiled; the user can use variables to define breakpoints
+    </p>
+    <p class='example'>
+      section { <br>
+        <span class='indent'>float: left;</span><br>
+        <span class='indent'>width: 65%;</span><br><br>
+
+        <span class='indent'>@media screen and (max-width: 800px) {</span><br>
+        <span class='indent-twice'>float: none;</span><br>
+        <span class='indent-twice'>width: auto;</span><br>
+        <span class='indent'>}</span><br>
+      } <br><br>
+      <span class='bold-text'>*Example of using a variable for a breakpoint</span><br><br>
+      $width-large: 800px; <br>
+      @media screen and (max-width: $width-large) { <br>
+        <span class='indent'>float: none;</span><br>
+        <span class='indent'>width: auto;</span><br>
       }
     </p>
     <p>
@@ -99,10 +118,10 @@
     </p>
     <p class='example'>
       a { <br>
-        <span class='indent'>color: #000; </span><br>
-        <span class='indent'>&amp;:hover { </span><br>
-        <span class='indent-twice'>color: #FF0000; </span><br>
-        <span class='indent'>} </span><br>
+        <span class='indent'>color: #000;</span><br>
+        <span class='indent'>&amp;:hover {</span><br>
+        <span class='indent-twice'>color: #FF0000;</span><br>
+        <span class='indent'>}</span><br>
       }
     </p>
     <p>
@@ -118,12 +137,12 @@
     <p>
     <p class='example'>
       .alert { <br>
-        <span class='indent'>padding: 15px; </span><br>
-        <span class='indent'>text-align: center; </span><br>
+        <span class='indent'>padding: 15px;</span><br>
+        <span class='indent'>text-align: center;</span><br>
       } <br><br>
       .alert-positive { <br>
-        <span class='indent'>@extend .alert; </span><br>
-        <span class='indent'>background: #9c3; </span><br>
+        <span class='indent'>@extend .alert;</span><br>
+        <span class='indent'>background: #9c3;</span><br>
       }
     </p>
     <p>
@@ -131,12 +150,12 @@
     </p>
     <p class='example'>
       %button { <br>
-        <span class='indent'>padding: 10px; </span><br>
-        <span class='indent'>font-weight: bold; </span><br>
-        <span class='indent'>background: blue; </span><br>
+        <span class='indent'>padding: 10px;</span><br>
+        <span class='indent'>font-weight: bold;</span><br>
+        <span class='indent'>background: blue;</span><br>
       } <br><br>
       .submit { <br>
-        <span class='indent'>@extend %button; </span><br>
+        <span class='indent'>@extend %button;</span><br>
       }
     </p>
     <p>
@@ -146,8 +165,8 @@
       <ul>
         <li>List @extend(s) first</li>
         <li>List @include(s) next</li>
-        <li>List 'regular' styles next</li>
-        <li>List nested pseudo classes next</li>
+        <li>List 'regular' styles after that</li>
+        <li>List nested pseudo classes second to last</li>
         <li>List nested selectors last</li>
         <li>Never write vendor prefixes</li>
         <li>Maximum nesting is 3 levels deep and 50 lines</li>
@@ -155,15 +174,15 @@
       </ul>
     <p class='example'>
       .submit-button { <br>
-        <span class='indent'>@extend %button; </span><br>
-        <span class='indent'>@include rounded-corners(5px); </span><br>
-        <span class='indent'>background: Blue; </span><br>
-        <span class='indent'>&amp;:hover { </span><br>
-        <span class='indent-twice'>background: DarkCyan; </span><br>
-        <span class='indent'>} </span><br>
-        <span class='indent'>h3 { </span><br>
-        <span class='indent-twice'>border-bottom: 1px solid #FFF; </span><br>
-        <span class='indent'>} </span><br>
+        <span class='indent'>@extend %button;</span><br>
+        <span class='indent'>@include rounded-corners(5px);</span><br>
+        <span class='indent'>background: Blue;</span><br>
+        <span class='indent'>&amp;:hover {</span><br>
+        <span class='indent-twice'>background: DarkCyan;</span><br>
+        <span class='indent'>}</span><br>
+        <span class='indent'>h3 {</span><br>
+        <span class='indent-twice'>border-bottom: 1px solid #FFF;</span><br>
+        <span class='indent'>}</span><br>
       }
     </p>
     <h4><a href="http://sass-lang.com/" target="_blank">More info at <span class='link'>SASS</span> Website</a></h4>
