@@ -9,7 +9,7 @@
 }
 
 p {
-  color: #7e2abf;
+  color: #25073d;
   font-size: 16px;
   font-family: "Lato", sans-serif;
   line-height: 1.5em;
@@ -19,43 +19,36 @@ ul {
   margin-left: 5px;
 }
 ul li {
-  color: #1AB78A;
+  color: #25073d;
   font-size: 18px;
   font-family: "Lato", sans-serif;
-  font-weight: bold;
 }
 
 a {
-  color: #000;
+  color: #25073d;
   text-decoration: none;
   text-transform: capitalize;
 }
 a:hover {
-  color: #23568b;
+  color: #7817c6;
 }
 
 .feature {
-  color: #8c31d2;
+  color: #330a54;
   font-size: 18px;
   font-weight: bold;
 }
 
 .book-title {
-  color: #148a68;
   text-decoration: underline;
 }
 
 .terminal-commands, .highlight-phrase {
-  color: #1AB78A;
+  color: #7817c6;
 }
 
 .bold-text {
   font-weight: bold;
-}
-
-.link {
-  color: #23568b;
-  text-transform: uppercase;
 }
 
 .indent {
@@ -74,11 +67,7 @@ h1 {
   text-align: center;
 }
 
-h3 {
-  margin-top: 50px;
-}
-
-h4 {
+h3, h4 {
   margin-top: 50px;
 }
 
