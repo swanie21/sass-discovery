@@ -7,29 +7,29 @@
   </head>
   <body>
     <h1>SASS (Syntactically Awesome Style Sheets)</h1>
-    <h3>Steps to learn SASS:</h3>
+    <h3>Steps to learn Sass:</h3>
       <ul>
-        <li>Read <span class='book-title'><a href="https://abookapart.com/products/sass-for-web-designers" target='_blank'>SASS for Web Designers</span></a> by Dan Cederholm</li>
+        <li>Read <span class='book-title'><a href="https://abookapart.com/products/sass-for-web-designers" target='_blank'>Sass for Web Designers</span></a> by Dan Cederholm</li>
         <li>Make practice files</li>
-        <li>Observe how SASS pre-processes .scss files into .css files</li>
+        <li>Observe how Sass pre-processes .scss files into .css files</li>
       </ul>
-    <h3>What is SASS</h3>
+    <h3>What is Sass</h3>
     <p>
-      SASS is a CSS preprocessor in which it acts as a layer between .scss files and .css files. It converts .scss files that have special features into .css files. SASS emphasizes DRY code by making code faster, more efficient, and more maintainable. <br>
-      <span class='highlight-phrase'>.scss file > SASS > .css file</span>
+      Sass is a CSS preprocessor in which it acts as a layer between .scss files and .css files. It converts .scss files that have special features into .css files. Sass emphasizes DRY code by making code faster, more efficient, and more maintainable. <br>
+      <span class='highlight-phrase'>.scss file > Sass > .css file</span>
     </p>
-    <h3>Set-up SASS locally with Command Line</h3>
+    <h3>Set-up Sass locally on Macs with Command Line</h3>
     <p>
-      Mac OS X comes pre-installed with Ruby and because SASS is packaged as a Ruby 'gem,' installation is quite simple. In the command line type: <span class='terminal-commands'>gem install sass</span>. After installation you can check the version of your SASS by typing in: <span class='terminal-commands'> sass -v </span>
-    </p>
-    <p>
-      After SASS is installed we want it to 'watch' files, so whenever we're editing a stylesheet we want SASS to monitor that file and convert the .scss file into a .css file. In the command line type: <span class='terminal-commands'>sass --watch main.scss:main.css</span>. The 'main.scss' is the name of your .scss file that will be converted into the 'main.css' file. These file names can be whatever you prefer them to be named. Typically, the 3 basic file types are module, partial, and vendor files.
+      Mac OS X comes pre-installed with Ruby and because Sass is packaged as a Ruby 'gem,' installation is quite simple. In the command line type: <span class='terminal-commands'>gem install sass</span>. After installation you can check the version of your Sass by typing in: <span class='terminal-commands'> sass -v </span>
     </p>
     <p>
-      SASS files can be organized into directories and the 'watch' command can be used to watch this specific directory. For example, let's say the .scss files are in a 'styles' folder. To watch the changes made in this directory in the command line type: <span class='terminal-commands'>sass --watch styles/main.scss:styles/main.css</span>
+      After Sass is installed we want it to 'watch' files, so whenever we're editing a stylesheet we want Sass to monitor that file and convert the .scss file into a .css file. In the command line type: <span class='terminal-commands'>sass --watch main.scss:main.css</span>. The 'main.scss' is the name of your .scss file that will be converted into the 'main.css' file. These file names can be whatever you prefer them to be named. Typically, the 3 basic file types are module, partial, and vendor files.
     </p>
     <p>
-      SASS files can have different output styles: style expanded, style compact, and style compressed. To specify the output style you can declare it in the command line with the 'watch' command: <span class='terminal-commands'>sass --watch --style expanded main.scss:main.css</span>
+      Sass files can be organized into directories and the 'watch' command can be used to watch this specific directory. For example, let's say the .scss files are in a 'styles' folder. To watch the changes made in this directory in the command line type: <span class='terminal-commands'>sass --watch styles/main.scss:styles/main.css</span>
+    </p>
+    <p>
+      Sass files can have different output styles: style expanded, style compact, and style compressed. To specify the output style you can declare it in the command line with the 'watch' command: <span class='terminal-commands'>sass --watch --style expanded main.scss:main.css</span>
     </p>
     <p class='example'>
       <span class='bold-text'>Style expanded: line break between declarations</span><br>
@@ -41,7 +41,7 @@
       <span class='bold-text'>Style compressed: removes all spaces and line breaks</span><br>
       li{margin-left:10px;}
     </p>
-    <h3>SASS Features:</h3>
+    <h3>Sass Features:</h3>
     <p>
       <span class='feature'>Variables: </span>allows the user to define and reuse values throughout the stylesheet; needs a $ to specify a value as a variable
     </p>
@@ -166,7 +166,7 @@
     <p>
       <span class='feature'>Comments: </span>Multi-line comments(/* with forward slashes and asterisks */) are compiled into the final .css output file; Single line comments (// with two forward slashes) are not compiled into the final .css output file
     </p>
-    <h3>SCSS Formatting</h3>
+    <h3>SCSS(Sassy CSS) Formatting</h3>
       <ul>
         <li>List @extend(s) first</li>
         <li>List @include(s) next</li>
@@ -190,6 +190,6 @@
         <span class='indent'>}</span><br>
       }
     </p>
-    <h4><a href="http://sass-lang.com/" target="_blank">More info at <span class='link'>SASS</span> Website</a></h4>
+    <h4><a href="http://sass-lang.com/" target="_blank">More info at <span class='link'>Sass</span> Website</a></h4>
   </body>
 </html>
