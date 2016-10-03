@@ -1,8 +1,8 @@
-# Discovering the Capabilities of SASS
+# Discovering the Capabilities of Sass
 
-This [repo](https://swanie21.github.io/sass-discovery/) covers these SASS topics:
+This [repo](https://swanie21.github.io/sass-discovery/) covers these Sass topics:
 
 
-* Installing SASS locally and implementing it
-* SASS Features and examples
+* Installing Sass locally and implementing it
+* Sass Features and examples
 * SCSS Formatting
